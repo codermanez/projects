@@ -3,6 +3,11 @@ var gameData = {
   antimassPerClick: 1,
 }
 var genData = {
+  costMultcost: 200,
+  origcostMult: 2.5,
+  costMult: 2.5,
+  costMultamnt: 0,
+  costMultperc: 0,
   T1amnt: 0,
   T1cost: 100,
   T2amnt: 0,
@@ -12,12 +17,21 @@ var genData = {
 function mineAntimass() {
   gameData.antimass += gameData.antimassPerClick
 }
+function costMultReduct() {
+  if (gameData.antimass >= genData.costMultcost) {
+    gameData.antimass -= genData.costMultcost
+    genData.costMultcost *= genData.costMultcost
+    genData.costMultamnt += 1
+    genData.costMult /= 2
+    (genData.costMult / genData.origcostMult) * 100 = genData.costMultperc
+    }
+  }
 function addGenT1() {
   if (gameData.antimass >= genData.T1cost) {
     gameData.antimass -= genData.T1cost
     genData.T1amnt += 1
     if (genData.T1amnt % 10 == 0) {
-      genData.T1cost *= genData.T1cost * 2.5
+      genData.T1cost *= genData.T1cost * genData.costMult
     }
   }
   else {
@@ -30,7 +44,7 @@ function addGenT2() {
     gameData.antimass -= genData.T2cost
     genData.T2amnt += 1
     if (genData.T2amnt % 10 == 0) {
-      genData.T2cost *= genData.T2cost * 2.5
+      genData.T2cost *= genData.T2cost * genData.costMult
     }
   }
   else {
@@ -40,6 +54,7 @@ function addGenT2() {
 }
 var intervalId = window.setInterval(function(){
   document.getElementById("AntimassGenerated").innerHTML = gameData.antimass + " Anti-Mass Generated"
+  document.getElementById("efficiency").innerHTML = "Cost: " + genData.costMultcost + ", You Have " + genData.T1amnt + " Efficiency Crystals, Which Equals to a " + genData.costMultperc + "% Decrease in Cost"
   document.getElementById("amntGenT1").innerHTML = "Cost: " + genData.T1cost + ", You Have " + genData.T1amnt + " Tier 1 Anti-Mass Generators (AMGs)"
   document.getElementById("amntGenT2").innerHTML = "Cost: " + genData.T2cost + ", You Have " + genData.T2amnt + " Tier 2 Anti-Mass Generators (AMGs)"
   gameData.antimass += genData.T1amnt
