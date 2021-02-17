@@ -8,4 +8,4 @@ function mineAntimass() {
 function updateScript() {
   document.getElementById("goldMined").innerHTML = gameData.antimass + " Anti-Mass Mined"
 }
-var intervalId = window.setInterval(updateScript(), 10);
+var intervalId = window.setInterval(updateScript, 10);
