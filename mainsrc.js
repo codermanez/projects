@@ -13,7 +13,7 @@ function addGenT1() {
   if (gameData.antimass >= genCosts.T1cost) {
     gameData.antimass -= genData.T1cost
     genData.T1amnt += 1
-    if (genData.T1amnt % 10 = 0) {
+    if (genData.T1amnt % 10 == 0) {
       genCosts.T1cost *= genData.T1cost * 2.5
     }
   }
