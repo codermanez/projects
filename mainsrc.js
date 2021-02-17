@@ -19,6 +19,7 @@ function addGenT1() {
   else {
     document.getElementById("genT1btn").innerHTML = "Sorry, not enough Anti-Mass"
     setTimeout(document.getElementById("genT1btn").innerHTML = "Build Anti-Mass Generator Tier 1", 1000)
+  }
 }
 var intervalId = window.setInterval(function(){
   document.getElementById("AntimassGenerated").innerHTML = gameData.antimass + " Anti-Mass Generated"
