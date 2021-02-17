@@ -4,8 +4,8 @@ var gameData = {
 }
 var genData = {
   costMultcost: 200,
-  origcostMult: 2.5,
-  costMult: 2.5,
+  origcostMult: 5,
+  costMult: 5,
   costMultamnt: 0,
   costMultperc: 0,
   T1amnt: 0,
