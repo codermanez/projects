@@ -16,6 +16,7 @@ function addGenT1() {
     if (genData.T1amnt % 10 = 0) {
       genCosts.T1cost *= genData.T1cost * 2.5
     }
+  }
   else {
     document.getElementById("genT1btn").innerHTML = "Sorry, not enough Anti-Mass"
     setTimeout(document.getElementById("genT1btn").innerHTML = "Build Anti-Mass Generator Tier 1", 1000)
