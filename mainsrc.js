@@ -10,7 +10,7 @@ function mineAntimass() {
   gameData.antimass += gameData.antimassPerClick
 }
 function addGenT1() {
-  if (gameData.antimass >= genCosts.T1cost) {
+  if (gameData.antimass >= genData.T1cost) {
     gameData.antimass -= genData.T1cost
     genData.T1amnt += 1
     if (genData.T1amnt % 10 == 0) {
@@ -24,6 +24,6 @@ function addGenT1() {
 }
 var intervalId = window.setInterval(function(){
   document.getElementById("AntimassGenerated").innerHTML = gameData.antimass + " Anti-Mass Generated"
-  document.getElementById("amntGenT1").innerHTML = "Cost: " + genData.T1cost + ", You Have" + genData.T1amnt + " Tier 1 Anti-Mass Generators (AMGs)"
+  document.getElementById("amntGenT1").innerHTML = "Cost: " + genData.T1cost + ", You Have " + genData.T1amnt + " Tier 1 Anti-Mass Generators (AMGs)"
   gameData.antimass += genData.T1amnt
 }, 10);
