@@ -5,7 +5,6 @@ var gameData = {
 function mineAntimass() {
   gameData.antimass += gameData.antimassPerClick
 }
-function updateScript() {
-  document.getElementById("goldMined").innerHTML = gameData.antimass + " Anti-Mass Mined"
-}
-var intervalId = window.setInterval(updateScript, 10);
+var intervalId = window.setInterval(function(){
+  document.getElementById("goldMined").innerHTML = gameData.antimass + " Anti-Mass Generated"
+}, 10);
