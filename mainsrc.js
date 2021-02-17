@@ -14,7 +14,7 @@ function addGenT1() {
     gameData.antimass -= genData.T1cost
     genData.T1amnt += 1
     if (genData.T1amnt % 10 == 0) {
-      genCosts.T1cost *= genData.T1cost * 2.5
+      genData.T1cost *= genData.T1cost * 2.5
     }
   }
   else {
@@ -24,6 +24,6 @@ function addGenT1() {
 }
 var intervalId = window.setInterval(function(){
   document.getElementById("AntimassGenerated").innerHTML = gameData.antimass + " Anti-Mass Generated"
-  document.getElementById("amntGenT1").innerHTML = "Cost: " + genCosts.T1cost + ", You Have" + genData.T1amnt + " Tier 1 Anti-Mass Generators (AMGs)"
+  document.getElementById("amntGenT1").innerHTML = "Cost: " + genData.T1cost + ", You Have" + genData.T1amnt + " Tier 1 Anti-Mass Generators (AMGs)"
   gameData.antimass += genData.T1amnt
 }, 10);
