@@ -3,7 +3,7 @@ var clickData = {
   jpc: 1
 }
 function createJoule() {
-  OmegaNum.add(clickData.joules, clickData.jpc)
+  OmegaNum.add(clickData.jpc, clickData.joules)
 }
 var mainUpdate = window.setInterval(function(){ // runs every 10ms, 100 times/sec
   document.getElementById("jouleCount").innerHTML = clickData.joules + "J Generated"
