@@ -20,5 +20,5 @@ function addgenT1() {
 var mainUpdate = window.setInterval(function(){ // runs every 10ms, 100 times/sec
   document.getElementById("jouleCount").innerHTML = clickData.joules + "J Generated"
   document.getElementById("JGenT1Count").innerHTML = "Cost: " + clickData.JGenT1Cost + ", You Have " + clickData.JGenT1 + " Tier 1 Energy Generators"
-  clickData.joules = clickData.joules.add(JGenT1)
+  clickData.joules = clickData.joules.add(clickData.JGenT1)
 }, 10)
