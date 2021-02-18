@@ -134,6 +134,8 @@ function addGenT3gens() {
 function cheat() {
   gameData.antimass += 1000000000000000
 }
+var antimassUpdateTime = genData.time * 10;
+var genUpdateTime = genData.time * 1000;
 var mainUpdate = window.setInterval(function(){ // runs every 10ms, 100 times/sec
   document.getElementById("AntimassGenerated").innerHTML = gameData.antimass + "g Anti-Mass Generated"
   document.getElementById("efficiency").innerHTML = "Cost: " + genData.costMultcost + "g, You Have " + genData.costMultamnt + " Efficiency Crystals, Which Equals to a " + genData.costMultperc + "% Decrease in Cost"
@@ -147,9 +149,9 @@ var mainUpdate = window.setInterval(function(){ // runs every 10ms, 100 times/se
   gameData.antimass += genData.T1amnt
   gameData.antimass += genData.T2amnt * genData.T2mult
   gameData.antimass += genData.T3amnt * genData.T3mult
-}, genData.time * 10);
+}, antimassUpdateTime);
 var genUpdate = window.setInterval(function(){ // runs every 1s, as to not overinflate antimass generation
   genData.T1amnt += superGenData.T1genamnt
   genData.T1amnt += superGenData.T2genamnt * superGenData.T2genmult
   genData.T1amnt += superGenData.T3genamnt * superGenData.T3genmult
-}, genData.time * 1000);
+}, genUpdateTime);
