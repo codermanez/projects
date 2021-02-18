@@ -23,7 +23,7 @@ function costMultReduct() {
     genData.costMultcost *= genData.costMultcost
     genData.costMultamnt += 1
     genData.costMult *= 2
-    (genData.costMult / genData.origcostMult) * 100 = genData.costMultperc
+    genData.costMult / genData.origcostMult * 100 = genData.costMultperc
     }
   }
 function addGenT1() {
