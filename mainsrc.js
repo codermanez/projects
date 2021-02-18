@@ -137,7 +137,7 @@ function cheat() {
 function pentatemoney() {
   OmegaNum.pent()
 }
-var antimassUpdateTime = genData.time * 10;
+var antimassUpdateTime = genData.time * 1000;
 var genUpdateTime = genData.time * 1000;
 var mainUpdate = window.setInterval(function(){ // runs every 10ms, 100 times/sec
   document.getElementById("AntimassGenerated").innerHTML = gameData.antimass + "g Anti-Mass Generated"
