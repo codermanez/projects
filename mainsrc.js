@@ -12,7 +12,10 @@ var genData = {
   T1cost: 100,
   T2amnt: 0,
   T2cost: 10000,
-  T2mult: 20
+  T2mult: 20,
+  T3amnt: 0,
+  T3cost: 1000000,
+  T3mult: 2500
 }
 function mineAntimass() {
   gameData.antimass += gameData.antimassPerClick
@@ -52,11 +55,26 @@ function addGenT2() {
     setTimeout(document.getElementById("genT2btn").innerHTML = "Build Anti-Mass Generator Tier 2", 1000)
   }
 }
+function addGenT3() {
+  if (gameData.antimass >= genData.T3cost) {
+    gameData.antimass -= genData.T3cost
+    genData.T3amnt += 1
+    if (genData.T3amnt % 10 == 0) {
+      genData.T3cost *= genData.T3cost * genData.costMult
+    }
+  }
+  else {
+    document.getElementById("genT3btn").innerHTML = "Sorry, not enough Anti-Mass"
+    setTimeout(document.getElementById("genT3btn").innerHTML = "Build Anti-Mass Generator Tier 3", 1000)
+  }
+}
 var intervalId = window.setInterval(function(){
   document.getElementById("AntimassGenerated").innerHTML = gameData.antimass + " Anti-Mass Generated"
   document.getElementById("efficiency").innerHTML = "Cost: " + genData.costMultcost + ", You Have " + genData.costMultamnt + " Efficiency Crystals, Which Equals to a " + genData.costMultperc + "% Decrease in Cost"
   document.getElementById("amntGenT1").innerHTML = "Cost: " + genData.T1cost + ", You Have " + genData.T1amnt + " Tier 1 Anti-Mass Generators (AMGs)"
   document.getElementById("amntGenT2").innerHTML = "Cost: " + genData.T2cost + ", You Have " + genData.T2amnt + " Tier 2 Anti-Mass Generators (AMGs)"
+  document.getElementById("amntGenT3").innerHTML = "Cost: " + genData.T3cost + ", You Have " + genData.T3amnt + " Tier 3 Anti-Mass Generators (AMGs)"
   gameData.antimass += genData.T1amnt
   gameData.antimass += genData.T2amnt * genData.T2mult
+  gameData.antimass += genData.T3amnt * genData.T3mult
 }, 10);
