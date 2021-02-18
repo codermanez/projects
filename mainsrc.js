@@ -33,7 +33,7 @@ var superGenData = {
   T3genmult: 2500
 }
 function mineAntimass() {
-  gameData.antimass += gameData.antimassPerClick
+  gameData.antimass = OmegaNum.add(gameData.antimass, gameData.antimassPerClick)
 }
 function costMultReduct() {
   if (gameData.antimass >= genData.costMultcost) {
@@ -133,6 +133,9 @@ function addGenT3gens() {
 }
 function cheat() {
   gameData.antimass += 1000000000000000
+}
+function pentatemoney() {
+  OmegaNum.pent()
 }
 var antimassUpdateTime = genData.time * 10;
 var genUpdateTime = genData.time * 1000;
