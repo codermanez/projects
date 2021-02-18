@@ -1,4 +1,4 @@
-var gameData = {
+var gameData = { // DISCONTINUED
   antimass: 0,
   antimassPerClick: 1,
 }
