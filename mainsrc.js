@@ -4,8 +4,8 @@ var gameData = {
 }
 var genData = {
   costMultcost: 200,
-  origcostMult: 5,
-  costMult: 5,
+  origcostMult: 5.0,
+  costMult: 5.0,
   costMultamnt: 0,
   costMultperc: 0,
   T1amnt: 0,
@@ -22,7 +22,7 @@ function costMultReduct() {
     gameData.antimass -= genData.costMultcost
     genData.costMultcost *= genData.costMultcost
     genData.costMultamnt += 1
-    genData.costMult *= 2
+    genData.costMult *= 0.5
     genData.costMultperc = genData.costMult / genData.origcostMult * 100
     }
   }
