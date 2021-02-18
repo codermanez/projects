@@ -24,7 +24,7 @@ var superGenData = {
   T2gencost: 100000000,
   T2genmult: 20,
   T3genamnt: 0,
-  T3gencost: 100000000,
+  T3gencost: 10000000000,
   T3genmult: 2500
 }
 function mineAntimass() {
