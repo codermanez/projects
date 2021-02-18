@@ -54,7 +54,7 @@ function addGenT2() {
 }
 var intervalId = window.setInterval(function(){
   document.getElementById("AntimassGenerated").innerHTML = gameData.antimass + " Anti-Mass Generated"
-  document.getElementById("efficiency").innerHTML = "Cost: " + genData.costMultcost + ", You Have " + genData.T1amnt + " Efficiency Crystals, Which Equals to a " + genData.costMultperc + "% Decrease in Cost"
+  document.getElementById("efficiency").innerHTML = "Cost: " + genData.costMultcost + ", You Have " + genData.costMultamnt + " Efficiency Crystals, Which Equals to a " + genData.costMultperc + "% Decrease in Cost"
   document.getElementById("amntGenT1").innerHTML = "Cost: " + genData.T1cost + ", You Have " + genData.T1amnt + " Tier 1 Anti-Mass Generators (AMGs)"
   document.getElementById("amntGenT2").innerHTML = "Cost: " + genData.T2cost + ", You Have " + genData.T2amnt + " Tier 2 Anti-Mass Generators (AMGs)"
   gameData.antimass += genData.T1amnt
