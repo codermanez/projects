@@ -1,6 +1,6 @@
 var clickData = {
-  joules = 0,
-  jpc = 1
+  joules: 0,
+  jpc: 1
 }
 function createJoule() {
   OmegaNum.add(joules, jpc)
