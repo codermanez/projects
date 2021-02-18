@@ -12,7 +12,7 @@ function addgenT1() {
   if (clickData.joules.gt(clickData.JGenT1Cost)) {
     clickData.joules.sub(clickData.JGenT1Cost)
     clickData.JGenT1 = clickData.JGenT1.add(1)
-    if (clickData.JGenT1.mod(10).eq(0)) {
+    if (clickData.JGenT1.cmp(10).eq(0)) {
       clickData.JGenT1Cost.pow(2).mul(clickData.costMultiplier)
     }
   }
