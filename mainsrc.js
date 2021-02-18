@@ -22,7 +22,7 @@ function costMultReduct() {
     gameData.antimass -= genData.costMultcost
     genData.costMultcost *= genData.costMultcost
     genData.costMultamnt += 1
-    genData.costMult = genData.costMult / 2
+    genData.costMult /= 2
     (genData.costMult / genData.origcostMult) * 100 = genData.costMultperc
     }
   }
