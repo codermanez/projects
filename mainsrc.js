@@ -19,7 +19,13 @@ var genData = {
 }
 var superGenData = {
   T1genamnt: 0,
-  T1gencost: 1000000
+  T1gencost: 1000000,
+  T2genamnt: 0,
+  T2gencost: 100000000,
+  T2genmult: 20,
+  T3genamnt: 0,
+  T3gencost: 100000000,
+  T3genmult: 2500
 }
 function mineAntimass() {
   gameData.antimass += gameData.antimassPerClick
@@ -85,6 +91,35 @@ function addGenT1gens() {
     setTimeout(document.getElementById("T1genT1btn").innerHTML = "Build T1 Super Generators Tier 1", 1000)
   }
 }
+function addGenT2gens() {
+  if (gameData.antimass >= superGenData.T2gencost) {
+    gameData.antimass -= superGenData.T2gencost
+    superGenData.T2genamnt += 1
+    if (superGenData.T2genamnt % 10 == 0) {
+      superGenData.T2gencost *= superGenData.T2gencost * genData.costMult
+    }
+  }
+  else {
+    document.getElementById("T2genT2btn").innerHTML = "Sorry, not enough Anti-Mass"
+    setTimeout(document.getElementById("T2genT2btn").innerHTML = "Build T2 Super Generators Tier 2", 1000)
+  }
+}
+function addGenT3gens() {
+  if (gameData.antimass >= superGenData.T3gencost) {
+    gameData.antimass -= superGenData.T3gencost
+    superGenData.T3genamnt += 1
+    if (superGenData.T3genamnt % 10 == 0) {
+      superGenData.T3gencost *= superGenData.T3gencost * genData.costMult
+    }
+  }
+  else {
+    document.getElementById("T1genT3btn").innerHTML = "Sorry, not enough Anti-Mass"
+    setTimeout(document.getElementById("T1genT3btn").innerHTML = "Build T3 Super Generators Tier 3", 1000)
+  }
+}
+function cheat() {
+  gameData.antimass += 1000000000000000
+}
 var mainUpdate = window.setInterval(function(){ // runs every 10ms, 100 times/sec
   document.getElementById("AntimassGenerated").innerHTML = gameData.antimass + " Anti-Mass Generated"
   document.getElementById("efficiency").innerHTML = "Cost: " + genData.costMultcost + ", You Have " + genData.costMultamnt + " Efficiency Crystals, Which Equals to a " + genData.costMultperc + "% Decrease in Cost"
@@ -92,10 +127,14 @@ var mainUpdate = window.setInterval(function(){ // runs every 10ms, 100 times/se
   document.getElementById("amntGenT2").innerHTML = "Cost: " + genData.T2cost + ", You Have " + genData.T2amnt + " Tier 2 Anti-Mass Generators (AMGs)"
   document.getElementById("amntGenT3").innerHTML = "Cost: " + genData.T3cost + ", You Have " + genData.T3amnt + " Tier 3 Anti-Mass Generators (AMGs)"
   document.getElementById("T1amntGenT1").innerHTML = "Cost: " + superGenData.T1gencost + ", You Have " + superGenData.T1genamnt + " Tier 1 Super Generators"
+  document.getElementById("T2amntGenT2").innerHTML = "Cost: " + superGenData.T1gencost + ", You Have " + superGenData.T1genamnt + " Tier 2 Super Generators"
+  document.getElementById("T3amntGenT3").innerHTML = "Cost: " + superGenData.T1gencost + ", You Have " + superGenData.T1genamnt + " Tier 3 Super Generators"
   gameData.antimass += genData.T1amnt
   gameData.antimass += genData.T2amnt * genData.T2mult
   gameData.antimass += genData.T3amnt * genData.T3mult
 }, 10);
 var mainUpdate = window.setInterval(function(){ // runs every 1s, as to not overinflate antimass generation
   genData.T1amnt += superGenData.T1genamnt
+  genData.T2amnt += superGenData.T2genamnt * superGenData.T2genmult
+  genData.T3amnt += superGenData.T3genamnt * superGenData.T3genmult
 }, 1000);
