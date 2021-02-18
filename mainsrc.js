@@ -33,7 +33,7 @@ var superGenData = {
   T3genmult: 2500
 }
 function mineAntimass() {
-  gameData.antimass = OmegaNum.add(gameData.antimassPerClick, gameData.antimass)
+  OmegaNum.add(gameData.antimass, gameData.antimassPerClick)
 }
 function costMultReduct() {
   if (gameData.antimass >= genData.costMultcost) {
