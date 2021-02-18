@@ -77,7 +77,7 @@ function addGenT1gens() {
     gameData.antimass -= superGenData.T1gencost
     superGenData.T1genamnt += 1
     if (superGenData.T1genamnt % 10 == 0) {
-      superGenData.T1gencost *= superGenData.T1gencost * superGenData.costMult
+      superGenData.T1gencost *= superGenData.T1gencost * genData.costMult
     }
   }
   else {
