@@ -10,7 +10,10 @@ var clickData = {
   JGenT2Mult: new Decimal("1"),
   JGenT3: new Decimal("0"),
   JGenT3Cost: new Decimal("500000"),
-  JGenT3Mult: new Decimal("1")
+  JGenT3Mult: new Decimal("1"),
+  JGenT4: new Decimal("0"),
+  JGenT4Cost: new Decimal("25000000"),
+  JGenT4Mult: new Decimal("1")
 }
 function createJoule() {
   clickData.joules = clickData.joules.add(clickData.jpc)
@@ -36,17 +39,26 @@ function addgenT3() {
     clickData.JGenT3Cost = clickData.JGenT3Cost.pow(1.05).mul(clickData.costMultiplier).ceil()
   }
 }
+function addgenT4() {
+  if (clickData.joules.gte(clickData.JGenT4Cost)) {
+    clickData.joules = clickData.joules.sub(clickData.JGenT4Cost)
+    clickData.JGenT4 = clickData.JGenT4.add(1)
+    clickData.JGenT4Cost = clickData.JGenT4Cost.pow(1.05).mul(clickData.costMultiplier).ceil()
+  }
+}
 function cheat() {
-  clickData.joules.pow(clickData.joules)
+  clickData.joules.add(new Decimal("ee100"))
 }
 var mainUpdate = window.setInterval(function(){ // runs every 10ms, 100 times/sec
   document.getElementById("jouleCount").innerHTML = clickData.joules + "J Generated"
   document.getElementById("JGenT1Count").innerHTML = "Cost: " + clickData.JGenT1Cost + ", You Have " + clickData.JGenT1 + " Tier 1 Energy Generators"
   document.getElementById("JGenT2Count").innerHTML = "Cost: " + clickData.JGenT2Cost + ", You Have " + clickData.JGenT2 + " Tier 2 Energy Generators"
   document.getElementById("JGenT3Count").innerHTML = "Cost: " + clickData.JGenT3Cost + ", You Have " + clickData.JGenT3 + " Tier 3 Energy Generators"
+  document.getElementById("JGenT4Count").innerHTML = "Cost: " + clickData.JGenT4Cost + ", You Have " + clickData.JGenT4 + " Tier 4 Energy Generators"
   clickData.joules = clickData.joules.add(clickData.JGenT1.mul(clickData.JGenT1Mult))
 }, 10)
 var genUpdate = window.setInterval(function(){
   clickData.JGenT1 = clickData.JGenT1.add(clickData.JGenT2.mul(clickData.JGenT2Mult))
   clickData.JGenT2 = clickData.JGenT2.add(clickData.JGenT3.mul(clickData.JGenT3Mult))
+  clickData.JGenT3 = clickData.JGenT3.add(clickData.JGenT4.mul(clickData.JGenT4Mult))
 }, 1000)
