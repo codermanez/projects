@@ -25,7 +25,31 @@ var clickData = {
   JGenT7Mult: new Decimal("1"),
   JGenT8: new Decimal("0"),
   JGenT8Cost: new Decimal("5000000000000000"),
-  JGenT8Mult: new Decimal("1")
+  JGenT8Mult: new Decimal("1"),
+  JGenT9: new Decimal("0"),
+  JGenT9Cost: new Decimal("250000000000000000"),
+  JGenT9Mult: new Decimal("1"),
+  JGenT10: new Decimal("0"),
+  JGenT10Cost: new Decimal("20000000000000000000"),
+  JGenT10Mult: new Decimal("1"),
+  JGenT11: new Decimal("0"),
+  JGenT11Cost: new Decimal("5000000000000000000000"),
+  JGenT11Mult: new Decimal("1"),
+  JGenT12: new Decimal("0"),
+  JGenT12Cost: new Decimal("250000000000000000000000"),
+  JGenT12Mult: new Decimal("1"),
+  JGenT13: new Decimal("0"),
+  JGenT13Cost: new Decimal("50000000000000000000000000"),
+  JGenT13Mult: new Decimal("1"),
+  JGenT14: new Decimal("0"),
+  JGenT14Cost: new Decimal("2000000000000000000000000000"),
+  JGenT14Mult: new Decimal("1"),
+  JGenT15: new Decimal("0"),
+  JGenT15Cost: new Decimal("250000000000000000000000000000"),
+  JGenT15Mult: new Decimal("1"),
+  JGenT16: new Decimal("0"),
+  JGenT16Cost: new Decimal("50000000000000000000000000000000"),
+  JGenT16Mult: new Decimal("1")
 }
 function createJoule() {
   clickData.joules = clickData.joules.add(clickData.jpc)
@@ -86,6 +110,62 @@ function addgenT8() {
     clickData.JGenT8Cost = clickData.JGenT8Cost.pow(1.05).mul(clickData.costMultiplier).ceil()
   }
 }
+function addgenT9() {
+  if (clickData.joules.gte(clickData.JGenT9Cost)) {
+    clickData.joules = clickData.joules.sub(clickData.JGenT9Cost)
+    clickData.JGenT9 = clickData.JGenT9.add(1)
+    clickData.JGenT9Cost = clickData.JGenT9Cost.pow(1.05).mul(clickData.costMultiplier).ceil()
+  }
+}
+function addgenT10() {
+  if (clickData.joules.gte(clickData.JGenT10Cost)) {
+    clickData.joules = clickData.joules.sub(clickData.JGenT10Cost)
+    clickData.JGenT10 = clickData.JGenT10.add(1)
+    clickData.JGenT10Cost = clickData.JGenT10Cost.pow(1.05).mul(clickData.costMultiplier).ceil()
+  }
+}
+function addgenT11() {
+  if (clickData.joules.gte(clickData.JGenT11Cost)) {
+    clickData.joules = clickData.joules.sub(clickData.JGenT11Cost)
+    clickData.JGenT11 = clickData.JGenT11.add(1)
+    clickData.JGenT11Cost = clickData.JGenT11Cost.pow(1.05).mul(clickData.costMultiplier).ceil()
+  }
+}
+function addgenT12() {
+  if (clickData.joules.gte(clickData.JGenT12Cost)) {
+    clickData.joules = clickData.joules.sub(clickData.JGenT12Cost)
+    clickData.JGenT12 = clickData.JGenT12.add(1)
+    clickData.JGenT12Cost = clickData.JGenT12Cost.pow(1.05).mul(clickData.costMultiplier).ceil()
+  }
+}
+function addgenT13() {
+  if (clickData.joules.gte(clickData.JGenT13Cost)) {
+    clickData.joules = clickData.joules.sub(clickData.JGenT13Cost)
+    clickData.JGenT13 = clickData.JGenT13.add(1)
+    clickData.JGenT13Cost = clickData.JGenT13Cost.pow(1.05).mul(clickData.costMultiplier).ceil()
+  }
+}
+function addgenT14() {
+  if (clickData.joules.gte(clickData.JGenT14Cost)) {
+    clickData.joules = clickData.joules.sub(clickData.JGenT14Cost)
+    clickData.JGenT14 = clickData.JGenT14.add(1)
+    clickData.JGenT14Cost = clickData.JGenT14Cost.pow(1.05).mul(clickData.costMultiplier).ceil()
+  }
+}
+function addgenT15() {
+  if (clickData.joules.gte(clickData.JGenT15Cost)) {
+    clickData.joules = clickData.joules.sub(clickData.JGenT15Cost)
+    clickData.JGenT15 = clickData.JGenT15.add(1)
+    clickData.JGenT15Cost = clickData.JGenT15Cost.pow(1.05).mul(clickData.costMultiplier).ceil()
+  }
+}
+function addgenT16() {
+  if (clickData.joules.gte(clickData.JGenT16Cost)) {
+    clickData.joules = clickData.joules.sub(clickData.JGenT16Cost)
+    clickData.JGenT16 = clickData.JGenT16.add(1)
+    clickData.JGenT16Cost = clickData.JGenT16Cost.pow(1.05).mul(clickData.costMultiplier).ceil()
+  }
+}
 function cheat() {
   clickData.joules.add(new Decimal("ee100"))
 }
@@ -99,6 +179,14 @@ var mainUpdate = window.setInterval(function(){ // runs every 10ms, 100 times/se
   document.getElementById("JGenT6Count").innerHTML = "Cost: " + clickData.JGenT6Cost + ", You Have " + clickData.JGenT6 + " Tier 6 Energy Generators"
   document.getElementById("JGenT7Count").innerHTML = "Cost: " + clickData.JGenT7Cost + ", You Have " + clickData.JGenT7 + " Tier 7 Energy Generators"
   document.getElementById("JGenT8Count").innerHTML = "Cost: " + clickData.JGenT8Cost + ", You Have " + clickData.JGenT8 + " Tier 8 Energy Generators"
+  document.getElementById("JGenT9Count").innerHTML = "Cost: " + clickData.JGenT9Cost + ", You Have " + clickData.JGenT9 + " Tier 1 Super Energy Generators"
+  document.getElementById("JGenT10Count").innerHTML = "Cost: " + clickData.JGenT10Cost + ", You Have " + clickData.JGenT10 + " Tier 2 Super Energy Generators"
+  document.getElementById("JGenT11Count").innerHTML = "Cost: " + clickData.JGenT11Cost + ", You Have " + clickData.JGenT11 + " Tier 3 Super Energy Generators"
+  document.getElementById("JGenT12Count").innerHTML = "Cost: " + clickData.JGenT12Cost + ", You Have " + clickData.JGenT12 + " Tier 4 Super Energy Generators"
+  document.getElementById("JGenT13Count").innerHTML = "Cost: " + clickData.JGenT13Cost + ", You Have " + clickData.JGenT13 + " Tier 5 Super Energy Generators"
+  document.getElementById("JGenT14Count").innerHTML = "Cost: " + clickData.JGenT14Cost + ", You Have " + clickData.JGenT14 + " Tier 6 Super Energy Generators"
+  document.getElementById("JGenT15Count").innerHTML = "Cost: " + clickData.JGenT15Cost + ", You Have " + clickData.JGenT15 + " Tier 7 Super Energy Generators"
+  document.getElementById("JGenT16Count").innerHTML = "Cost: " + clickData.JGenT16Cost + ", You Have " + clickData.JGenT16 + " Tier 8 Super Energy Generators"
   clickData.joules = clickData.joules.add(clickData.JGenT1.mul(clickData.JGenT1Mult))
 }, 10)
 var genUpdate = window.setInterval(function(){
@@ -109,4 +197,12 @@ var genUpdate = window.setInterval(function(){
   clickData.JGenT5 = clickData.JGenT5.add(clickData.JGenT6.mul(clickData.JGenT6Mult))
   clickData.JGenT6 = clickData.JGenT6.add(clickData.JGenT7.mul(clickData.JGenT7Mult))
   clickData.JGenT7 = clickData.JGenT7.add(clickData.JGenT8.mul(clickData.JGenT8Mult))
+  clickData.JGenT8 = clickData.JGenT8.add(clickData.JGenT9.mul(clickData.JGenT9Mult))
+  clickData.JGenT9 = clickData.JGenT9.add(clickData.JGenT10.mul(clickData.JGenT10Mult))
+  clickData.JGenT10 = clickData.JGenT10.add(clickData.JGenT11.mul(clickData.JGenT11Mult))
+  clickData.JGenT11 = clickData.JGenT11.add(clickData.JGenT12.mul(clickData.JGenT12Mult))
+  clickData.JGenT12 = clickData.JGenT12.add(clickData.JGenT13.mul(clickData.JGenT13Mult))
+  clickData.JGenT13 = clickData.JGenT13.add(clickData.JGenT14.mul(clickData.JGenT14Mult))
+  clickData.JGenT14 = clickData.JGenT14.add(clickData.JGenT15.mul(clickData.JGenT15Mult))
+  clickData.JGenT15 = clickData.JGenT15.add(clickData.JGenT16.mul(clickData.JGenT16Mult))
 }, 1000)
