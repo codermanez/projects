@@ -12,7 +12,7 @@ function addgenT1() {
   if (clickData.joules.gte(clickData.JGenT1Cost)) {
     clickData.joules = clickData.joules.sub(clickData.JGenT1Cost)
     clickData.JGenT1 = clickData.JGenT1.add(1)
-    clickData.JGenT1Cost = clickData.JGenT1Cost.pow(1.25).mul(clickData.costMultiplier)
+    clickData.JGenT1Cost = clickData.JGenT1Cost.pow(1.05).mul(clickData.costMultiplier).ceil()
   }
 }
 var mainUpdate = window.setInterval(function(){ // runs every 10ms, 100 times/sec
