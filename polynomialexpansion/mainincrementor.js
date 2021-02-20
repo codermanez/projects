@@ -1,10 +1,3 @@
-function efmt(x) {
-  numberformat.format(x, {backend: 'decimal.js',
-                          format: 'engineering',
-                          Decimal: Decimal
-                         }
-                     )
-}
 var clickData = {
   joules: new Decimal("0"),
   jpc: new Decimal("1"),
@@ -177,47 +170,47 @@ function cheat() {
   clickData.JGenT16 = clickData.JGenT16.add(1000)
 }
 var mainUpdate = window.setInterval(function(){ // runs every 10ms, 100 times/sec
-  document.getElementById("jouleCount").innerHTML = efmt(clickData.joules) + "J Generated"
-  document.getElementById("JGenT1Count").innerHTML = "Cost: " + efmt(clickData.JGenT1Cost) + ", You Have " + efmt(clickData.JGenT1) + " Tier 1 Energy Generators"
-  document.getElementById("JGenT2Count").innerHTML = "Cost: " + efmt(clickData.JGenT2Cost) + ", You Have " + efmt(clickData.JGenT2) + " Tier 2 Energy Generators"
-  document.getElementById("JGenT3Count").innerHTML = "Cost: " + efmt(clickData.JGenT3Cost) + ", You Have " + efmt(clickData.JGenT3) + " Tier 3 Energy Generators"
-  document.getElementById("JGenT4Count").innerHTML = "Cost: " + efmt(clickData.JGenT4Cost) + ", You Have " + efmt(clickData.JGenT4) + " Tier 4 Energy Generators"
-  document.getElementById("JGenT5Count").innerHTML = "Cost: " + efmt(clickData.JGenT5Cost) + ", You Have " + efmt(clickData.JGenT5) + " Tier 5 Energy Generators"
-  document.getElementById("JGenT6Count").innerHTML = "Cost: " + efmt(clickData.JGenT6Cost) + ", You Have " + efmt(clickData.JGenT6) + " Tier 6 Energy Generators"
-  document.getElementById("JGenT7Count").innerHTML = "Cost: " + efmt(clickData.JGenT7Cost) + ", You Have " + efmt(clickData.JGenT7) + " Tier 7 Energy Generators"
-  document.getElementById("JGenT8Count").innerHTML = "Cost: " + efmt(clickData.JGenT8Cost) + ", You Have " + efmt(clickData.JGenT8) + " Tier 8 Energy Generators"
-  document.getElementById("JGenT9Count").innerHTML = "Cost: " + efmt(clickData.JGenT9Cost) + ", You Have " + efmt(clickData.JGenT9) + " Tier 1 Super Energy Generators"
-  document.getElementById("JGenT10Count").innerHTML = "Cost: " + efmt(clickData.JGenT10Cost) + ", You Have " + efmt(clickData.JGenT10) + " Tier 2 Super Energy Generators"
-  document.getElementById("JGenT11Count").innerHTML = "Cost: " + efmt(clickData.JGenT11Cost) + ", You Have " + efmt(clickData.JGenT11) + " Tier 3 Super Energy Generators"
-  document.getElementById("JGenT12Count").innerHTML = "Cost: " + efmt(clickData.JGenT12Cost) + ", You Have " + efmt(clickData.JGenT12) + " Tier 4 Super Energy Generators"
-  document.getElementById("JGenT13Count").innerHTML = "Cost: " + efmt(clickData.JGenT13Cost) + ", You Have " + efmt(clickData.JGenT13) + " Tier 5 Super Energy Generators"
-  document.getElementById("JGenT14Count").innerHTML = "Cost: " + efmt(clickData.JGenT14Cost) + ", You Have " + efmt(clickData.JGenT14) + " Tier 6 Super Energy Generators"
-  document.getElementById("JGenT15Count").innerHTML = "Cost: " + efmt(clickData.JGenT15Cost) + ", You Have " + efmt(clickData.JGenT15) + " Tier 7 Super Energy Generators"
-  document.getElementById("JGenT16Count").innerHTML = "Cost: " + efmt(clickData.JGenT16Cost) + ", You Have " + efmt(clickData.JGenT16) + " Tier 8 Super Energy Generators"
-  document.getElementById("alphaCount").innerHTML = "&alpha;: " + efmt(prestige.alpha)
-  document.getElementById("betaCount").innerHTML = "&beta;: " + efmt(prestige.beta)
-  document.getElementById("gammaCount").innerHTML = "&gamma;: " + efmt(prestige.gamma)
-  document.getElementById("deltaCount").innerHTML = "&delta;: " + efmt(prestige.delta)
-  document.getElementById("epsilonCount").innerHTML = "&epsilon;: " + efmt(prestige.epsilon)
-  document.getElementById("zetaCount").innerHTML = "&zeta;: " + efmt(prestige.zeta)
-  document.getElementById("etaCount").innerHTML = "&eta;: " + efmt(prestige.eta)
-  document.getElementById("thetaCount").innerHTML = "&theta;: " + efmt(prestige.theta)
-  document.getElementById("iotaCount").innerHTML = "&iota;: " + efmt(prestige.iota)
-  document.getElementById("kappaCount").innerHTML = "&kappa;: " + efmt(prestige.kappa)
-  document.getElementById("lambdaCount").innerHTML = "&lambda;: " + efmt(prestige.lambda)
-  document.getElementById("muCount").innerHTML = "&mu;: " + efmt(prestige.mu)
-  document.getElementById("nuCount").innerHTML = "&nu;: " + efmt(prestige.nu)
-  document.getElementById("xiCount").innerHTML = "&xi;: " + efmt(prestige.xi)
-  document.getElementById("omicronCount").innerHTML = "&omicron;: " + efmt(prestige.omicron)
-  document.getElementById("piCount").innerHTML = "&pi;: " + efmt(prestige.pi)
-  document.getElementById("rhoCount").innerHTML = "&rho;: " + efmt(prestige.rho)
-  document.getElementById("sigmaCount").innerHTML = "&sigma;: " + efmt(prestige.sigma)
-  document.getElementById("tauCount").innerHTML = "&tau;: " + efmt(prestige.tau)
-  document.getElementById("upsilonCount").innerHTML = "&upsilon;: " + efmt(prestige.upsilon)
-  document.getElementById("phiCount").innerHTML = "&phi;: " + efmt(prestige.phi)
-  document.getElementById("chiCount").innerHTML = "&chi;: " + efmt(prestige.chi)
-  document.getElementById("psiCount").innerHTML = "&psi;: " + efmt(prestige.psi)
-  document.getElementById("omegaCount").innerHTML = "&omega;: " + efmt(prestige.omega)
+  document.getElementById("jouleCount").innerHTML = numberformat.format(clickData.joules) + "J Generated"
+  document.getElementById("JGenT1Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT1Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT1, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 1 Energy Generators"
+  document.getElementById("JGenT2Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT2Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT2, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 2 Energy Generators"
+  document.getElementById("JGenT3Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT3Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT3, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 3 Energy Generators"
+  document.getElementById("JGenT4Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT4Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT4, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 4 Energy Generators"
+  document.getElementById("JGenT5Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT5Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT5, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 5 Energy Generators"
+  document.getElementById("JGenT6Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT6Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT6, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 6 Energy Generators"
+  document.getElementById("JGenT7Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT7Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT7, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 7 Energy Generators"
+  document.getElementById("JGenT8Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT8Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT8, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 8 Energy Generators"
+  document.getElementById("JGenT9Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT9Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT9, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 1 Super Energy Generators"
+  document.getElementById("JGenT10Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT10Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT10, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 2 Super Energy Generators"
+  document.getElementById("JGenT11Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT11Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT11, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 3 Super Energy Generators"
+  document.getElementById("JGenT12Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT12Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT12, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 4 Super Energy Generators"
+  document.getElementById("JGenT13Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT13Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT13, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 5 Super Energy Generators"
+  document.getElementById("JGenT14Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT14Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT14, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 6 Super Energy Generators"
+  document.getElementById("JGenT15Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT15Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT15, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 7 Super Energy Generators"
+  document.getElementById("JGenT16Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT16Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT16, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 8 Super Energy Generators"
+  document.getElementById("alphaCount").innerHTML = "&alpha;: " + numberformat.format(prestige.alpha, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("betaCount").innerHTML = "&beta;: " + numberformat.format(prestige.beta, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("gammaCount").innerHTML = "&gamma;: " + numberformat.format(prestige.gamma, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("deltaCount").innerHTML = "&delta;: " + numberformat.format(prestige.delta, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("epsilonCount").innerHTML = "&epsilon;: " + numberformat.format(prestige.epsilon, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("zetaCount").innerHTML = "&zeta;: " + numberformat.format(prestige.zeta, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("etaCount").innerHTML = "&eta;: " + numberformat.format(prestige.eta, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("thetaCount").innerHTML = "&theta;: " + numberformat.format(prestige.theta, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("iotaCount").innerHTML = "&iota;: " + numberformat.format(prestige.iota, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("kappaCount").innerHTML = "&kappa;: " + numberformat.format(prestige.kappa, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("lambdaCount").innerHTML = "&lambda;: " + numberformat.format(prestige.lambda, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("muCount").innerHTML = "&mu;: " + numberformat.format(prestige.mu, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("nuCount").innerHTML = "&nu;: " + numberformat.format(prestige.nu, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("xiCount").innerHTML = "&xi;: " + numberformat.format(prestige.xi, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("omicronCount").innerHTML = "&omicron;: " + numberformat.format(prestige.omicron, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("piCount").innerHTML = "&pi;: " + numberformat.format(prestige.pi, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("rhoCount").innerHTML = "&rho;: " + numberformat.format(prestige.rho, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("sigmaCount").innerHTML = "&sigma;: " + numberformat.format(prestige.sigma, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("tauCount").innerHTML = "&tau;: " + numberformat.format(prestige.tau, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("upsilonCount").innerHTML = "&upsilon;: " + numberformat.format(prestige.upsilon, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("phiCount").innerHTML = "&phi;: " + numberformat.format(prestige.phi, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("chiCount").innerHTML = "&chi;: " + numberformat.format(prestige.chi, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("psiCount").innerHTML = "&psi;: " + numberformat.format(prestige.psi, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
+  document.getElementById("omegaCount").innerHTML = "&omega;: " + numberformat.format(prestige.omega, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal})
   clickData.joules = clickData.joules.add(clickData.JGenT1.mul(clickData.JGenT1Mult))
 }, 10)
 var genUpdate = window.setInterval(function(){
