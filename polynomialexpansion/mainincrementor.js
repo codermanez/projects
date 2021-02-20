@@ -1,4 +1,3 @@
-import * as ADNotations from "@antimatter-dimensions/notations";
 const standard = new ADNotations.StandardNotation();
 var clickData = {
   joules: new Decimal("0"),
