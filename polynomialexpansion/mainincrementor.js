@@ -167,7 +167,7 @@ function addgenT16() {
   }
 }
 function cheat() {
-  clickData.joules.add(new Decimal("ee100"))
+  clickData.joules.add(new Decimal("1e1000"))
 }
 var mainUpdate = window.setInterval(function(){ // runs every 10ms, 100 times/sec
   document.getElementById("jouleCount").innerHTML = clickData.joules + "J Generated"
