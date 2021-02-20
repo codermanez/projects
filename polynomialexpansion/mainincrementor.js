@@ -1,4 +1,4 @@
-const standard = new ADNotations.StandardNotation();
+const standard = new ADNotations.ScientificNotation();
 var clickData = {
   joules: new Decimal("0"),
   jpc: new Decimal("1"),
