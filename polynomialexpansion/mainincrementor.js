@@ -1,4 +1,10 @@
-const standard = new ADNotations.ScientificNotation();
+function fmt(x, name) {
+  numberformat.format(x, {backend: 'decimal.js',
+                          format: name,
+                          Decimal: Decimal
+                         }
+                     )
+}
 var clickData = {
   joules: new Decimal("0"),
   jpc: new Decimal("1"),
