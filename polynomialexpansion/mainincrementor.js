@@ -1,6 +1,6 @@
-function fmt(x, name) {
+function efmt(x) {
   numberformat.format(x, {backend: 'decimal.js',
-                          format: name,
+                          format: 'engineering',
                           Decimal: Decimal
                          }
                      )
@@ -177,47 +177,47 @@ function cheat() {
   clickData.JGenT16 = clickData.JGenT16.add(1000)
 }
 var mainUpdate = window.setInterval(function(){ // runs every 10ms, 100 times/sec
-  document.getElementById("jouleCount").innerHTML = fmt(clickData.joules, "engineering") + "J Generated"
-  document.getElementById("JGenT1Count").innerHTML = "Cost: " + fmt(clickData.JGenT1Cost, "engineering") + ", You Have " + fmt(clickData.JGenT1, "engineering") + " Tier 1 Energy Generators"
-  document.getElementById("JGenT2Count").innerHTML = "Cost: " + fmt(clickData.JGenT2Cost, "engineering") + ", You Have " + fmt(clickData.JGenT2, "engineering") + " Tier 2 Energy Generators"
-  document.getElementById("JGenT3Count").innerHTML = "Cost: " + fmt(clickData.JGenT3Cost, "engineering") + ", You Have " + fmt(clickData.JGenT3, "engineering") + " Tier 3 Energy Generators"
-  document.getElementById("JGenT4Count").innerHTML = "Cost: " + fmt(clickData.JGenT4Cost, "engineering") + ", You Have " + fmt(clickData.JGenT4, "engineering") + " Tier 4 Energy Generators"
-  document.getElementById("JGenT5Count").innerHTML = "Cost: " + fmt(clickData.JGenT5Cost, "engineering") + ", You Have " + fmt(clickData.JGenT5, "engineering") + " Tier 5 Energy Generators"
-  document.getElementById("JGenT6Count").innerHTML = "Cost: " + fmt(clickData.JGenT6Cost, "engineering") + ", You Have " + fmt(clickData.JGenT6, "engineering") + " Tier 6 Energy Generators"
-  document.getElementById("JGenT7Count").innerHTML = "Cost: " + fmt(clickData.JGenT7Cost, "engineering") + ", You Have " + fmt(clickData.JGenT7, "engineering") + " Tier 7 Energy Generators"
-  document.getElementById("JGenT8Count").innerHTML = "Cost: " + fmt(clickData.JGenT8Cost, "engineering") + ", You Have " + fmt(clickData.JGenT8, "engineering") + " Tier 8 Energy Generators"
-  document.getElementById("JGenT9Count").innerHTML = "Cost: " + fmt(clickData.JGenT9Cost, "engineering") + ", You Have " + fmt(clickData.JGenT9, "engineering") + " Tier 1 Super Energy Generators"
-  document.getElementById("JGenT10Count").innerHTML = "Cost: " + fmt(clickData.JGenT10Cost, "engineering") + ", You Have " + fmt(clickData.JGenT10, "engineering") + " Tier 2 Super Energy Generators"
-  document.getElementById("JGenT11Count").innerHTML = "Cost: " + fmt(clickData.JGenT11Cost, "engineering") + ", You Have " + fmt(clickData.JGenT11, "engineering") + " Tier 3 Super Energy Generators"
-  document.getElementById("JGenT12Count").innerHTML = "Cost: " + fmt(clickData.JGenT12Cost, "engineering") + ", You Have " + fmt(clickData.JGenT12, "engineering") + " Tier 4 Super Energy Generators"
-  document.getElementById("JGenT13Count").innerHTML = "Cost: " + fmt(clickData.JGenT13Cost, "engineering") + ", You Have " + fmt(clickData.JGenT13, "engineering") + " Tier 5 Super Energy Generators"
-  document.getElementById("JGenT14Count").innerHTML = "Cost: " + fmt(clickData.JGenT14Cost, "engineering") + ", You Have " + fmt(clickData.JGenT14, "engineering") + " Tier 6 Super Energy Generators"
-  document.getElementById("JGenT15Count").innerHTML = "Cost: " + fmt(clickData.JGenT15Cost, "engineering") + ", You Have " + fmt(clickData.JGenT15, "engineering") + " Tier 7 Super Energy Generators"
-  document.getElementById("JGenT16Count").innerHTML = "Cost: " + fmt(clickData.JGenT16Cost, "engineering") + ", You Have " + fmt(clickData.JGenT16, "engineering") + " Tier 8 Super Energy Generators"
-  document.getElementById("alphaCount").innerHTML = "&alpha;: " + fmt(prestige.alpha, "engineering")
-  document.getElementById("betaCount").innerHTML = "&beta;: " + fmt(prestige.beta, "engineering")
-  document.getElementById("gammaCount").innerHTML = "&gamma;: " + fmt(prestige.gamma, "engineering")
-  document.getElementById("deltaCount").innerHTML = "&delta;: " + fmt(prestige.delta, "engineering")
-  document.getElementById("epsilonCount").innerHTML = "&epsilon;: " + fmt(prestige.epsilon, "engineering")
-  document.getElementById("zetaCount").innerHTML = "&zeta;: " + fmt(prestige.zeta, "engineering")
-  document.getElementById("etaCount").innerHTML = "&eta;: " + fmt(prestige.eta, "engineering")
-  document.getElementById("thetaCount").innerHTML = "&theta;: " + fmt(prestige.theta, "engineering")
-  document.getElementById("iotaCount").innerHTML = "&iota;: " + fmt(prestige.iota, "engineering")
-  document.getElementById("kappaCount").innerHTML = "&kappa;: " + fmt(prestige.kappa, "engineering")
-  document.getElementById("lambdaCount").innerHTML = "&lambda;: " + fmt(prestige.lambda, "engineering")
-  document.getElementById("muCount").innerHTML = "&mu;: " + fmt(prestige.mu, "engineering")
-  document.getElementById("nuCount").innerHTML = "&nu;: " + fmt(prestige.nu, "engineering")
-  document.getElementById("xiCount").innerHTML = "&xi;: " + fmt(prestige.xi, "engineering")
-  document.getElementById("omicronCount").innerHTML = "&omicron;: " + fmt(prestige.omicron, "engineering")
-  document.getElementById("piCount").innerHTML = "&pi;: " + fmt(prestige.pi, "engineering")
-  document.getElementById("rhoCount").innerHTML = "&rho;: " + fmt(prestige.rho, "engineering")
-  document.getElementById("sigmaCount").innerHTML = "&sigma;: " + fmt(prestige.sigma, "engineering")
-  document.getElementById("tauCount").innerHTML = "&tau;: " + fmt(prestige.tau, "engineering")
-  document.getElementById("upsilonCount").innerHTML = "&upsilon;: " + fmt(prestige.upsilon, "engineering")
-  document.getElementById("phiCount").innerHTML = "&phi;: " + fmt(prestige.phi, "engineering")
-  document.getElementById("chiCount").innerHTML = "&chi;: " + fmt(prestige.chi, "engineering")
-  document.getElementById("psiCount").innerHTML = "&psi;: " + fmt(prestige.psi, "engineering")
-  document.getElementById("omegaCount").innerHTML = "&omega;: " + fmt(prestige.omega, "engineering")
+  document.getElementById("jouleCount").innerHTML = efmt(clickData.joules) + "J Generated"
+  document.getElementById("JGenT1Count").innerHTML = "Cost: " + efmt(clickData.JGenT1Cost) + ", You Have " + efmt(clickData.JGenT1) + " Tier 1 Energy Generators"
+  document.getElementById("JGenT2Count").innerHTML = "Cost: " + efmt(clickData.JGenT2Cost) + ", You Have " + efmt(clickData.JGenT2) + " Tier 2 Energy Generators"
+  document.getElementById("JGenT3Count").innerHTML = "Cost: " + efmt(clickData.JGenT3Cost) + ", You Have " + efmt(clickData.JGenT3) + " Tier 3 Energy Generators"
+  document.getElementById("JGenT4Count").innerHTML = "Cost: " + efmt(clickData.JGenT4Cost) + ", You Have " + efmt(clickData.JGenT4) + " Tier 4 Energy Generators"
+  document.getElementById("JGenT5Count").innerHTML = "Cost: " + efmt(clickData.JGenT5Cost) + ", You Have " + efmt(clickData.JGenT5) + " Tier 5 Energy Generators"
+  document.getElementById("JGenT6Count").innerHTML = "Cost: " + efmt(clickData.JGenT6Cost) + ", You Have " + efmt(clickData.JGenT6) + " Tier 6 Energy Generators"
+  document.getElementById("JGenT7Count").innerHTML = "Cost: " + efmt(clickData.JGenT7Cost) + ", You Have " + efmt(clickData.JGenT7) + " Tier 7 Energy Generators"
+  document.getElementById("JGenT8Count").innerHTML = "Cost: " + efmt(clickData.JGenT8Cost) + ", You Have " + efmt(clickData.JGenT8) + " Tier 8 Energy Generators"
+  document.getElementById("JGenT9Count").innerHTML = "Cost: " + efmt(clickData.JGenT9Cost) + ", You Have " + efmt(clickData.JGenT9) + " Tier 1 Super Energy Generators"
+  document.getElementById("JGenT10Count").innerHTML = "Cost: " + efmt(clickData.JGenT10Cost) + ", You Have " + efmt(clickData.JGenT10) + " Tier 2 Super Energy Generators"
+  document.getElementById("JGenT11Count").innerHTML = "Cost: " + efmt(clickData.JGenT11Cost) + ", You Have " + efmt(clickData.JGenT11) + " Tier 3 Super Energy Generators"
+  document.getElementById("JGenT12Count").innerHTML = "Cost: " + efmt(clickData.JGenT12Cost) + ", You Have " + efmt(clickData.JGenT12) + " Tier 4 Super Energy Generators"
+  document.getElementById("JGenT13Count").innerHTML = "Cost: " + efmt(clickData.JGenT13Cost) + ", You Have " + efmt(clickData.JGenT13) + " Tier 5 Super Energy Generators"
+  document.getElementById("JGenT14Count").innerHTML = "Cost: " + efmt(clickData.JGenT14Cost) + ", You Have " + efmt(clickData.JGenT14) + " Tier 6 Super Energy Generators"
+  document.getElementById("JGenT15Count").innerHTML = "Cost: " + efmt(clickData.JGenT15Cost) + ", You Have " + efmt(clickData.JGenT15) + " Tier 7 Super Energy Generators"
+  document.getElementById("JGenT16Count").innerHTML = "Cost: " + efmt(clickData.JGenT16Cost) + ", You Have " + efmt(clickData.JGenT16) + " Tier 8 Super Energy Generators"
+  document.getElementById("alphaCount").innerHTML = "&alpha;: " + efmt(prestige.alpha)
+  document.getElementById("betaCount").innerHTML = "&beta;: " + efmt(prestige.beta)
+  document.getElementById("gammaCount").innerHTML = "&gamma;: " + efmt(prestige.gamma)
+  document.getElementById("deltaCount").innerHTML = "&delta;: " + efmt(prestige.delta)
+  document.getElementById("epsilonCount").innerHTML = "&epsilon;: " + efmt(prestige.epsilon)
+  document.getElementById("zetaCount").innerHTML = "&zeta;: " + efmt(prestige.zeta)
+  document.getElementById("etaCount").innerHTML = "&eta;: " + efmt(prestige.eta)
+  document.getElementById("thetaCount").innerHTML = "&theta;: " + efmt(prestige.theta)
+  document.getElementById("iotaCount").innerHTML = "&iota;: " + efmt(prestige.iota)
+  document.getElementById("kappaCount").innerHTML = "&kappa;: " + efmt(prestige.kappa)
+  document.getElementById("lambdaCount").innerHTML = "&lambda;: " + efmt(prestige.lambda)
+  document.getElementById("muCount").innerHTML = "&mu;: " + efmt(prestige.mu)
+  document.getElementById("nuCount").innerHTML = "&nu;: " + efmt(prestige.nu)
+  document.getElementById("xiCount").innerHTML = "&xi;: " + efmt(prestige.xi)
+  document.getElementById("omicronCount").innerHTML = "&omicron;: " + efmt(prestige.omicron)
+  document.getElementById("piCount").innerHTML = "&pi;: " + efmt(prestige.pi)
+  document.getElementById("rhoCount").innerHTML = "&rho;: " + efmt(prestige.rho)
+  document.getElementById("sigmaCount").innerHTML = "&sigma;: " + efmt(prestige.sigma)
+  document.getElementById("tauCount").innerHTML = "&tau;: " + efmt(prestige.tau)
+  document.getElementById("upsilonCount").innerHTML = "&upsilon;: " + efmt(prestige.upsilon)
+  document.getElementById("phiCount").innerHTML = "&phi;: " + efmt(prestige.phi)
+  document.getElementById("chiCount").innerHTML = "&chi;: " + efmt(prestige.chi)
+  document.getElementById("psiCount").innerHTML = "&psi;: " + efmt(prestige.psi)
+  document.getElementById("omegaCount").innerHTML = "&omega;: " + efmt(prestige.omega)
   clickData.joules = clickData.joules.add(clickData.JGenT1.mul(clickData.JGenT1Mult))
 }, 10)
 var genUpdate = window.setInterval(function(){
