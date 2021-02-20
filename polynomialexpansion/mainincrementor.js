@@ -187,6 +187,10 @@ var mainUpdate = window.setInterval(function(){ // runs every 10ms, 100 times/se
   document.getElementById("JGenT14Count").innerHTML = "Cost: " + clickData.JGenT14Cost + ", You Have " + clickData.JGenT14 + " Tier 6 Super Energy Generators"
   document.getElementById("JGenT15Count").innerHTML = "Cost: " + clickData.JGenT15Cost + ", You Have " + clickData.JGenT15 + " Tier 7 Super Energy Generators"
   document.getElementById("JGenT16Count").innerHTML = "Cost: " + clickData.JGenT16Cost + ", You Have " + clickData.JGenT16 + " Tier 8 Super Energy Generators"
+  document.getElementById("alphaCount").innerHTML = "	&alpha;: " + prestige.alpha
+  document.getElementById("betaCount").innerHTML = "	&beta;: " + prestige.beta
+  document.getElementById("gammaCount").innerHTML = "	&gamma;: " + prestige.gamma
+  document.getElementById("deltaCount").innerHTML = "	&delta;: " + prestige.delta
   clickData.joules = clickData.joules.add(clickData.JGenT1.mul(clickData.JGenT1Mult))
 }, 10)
 var genUpdate = window.setInterval(function(){
