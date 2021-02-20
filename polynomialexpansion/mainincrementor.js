@@ -170,7 +170,7 @@ function cheat() {
   clickData.JGenT16 = clickData.JGenT16.add(1000)
 }
 var mainUpdate = window.setInterval(function(){ // runs every 10ms, 100 times/sec
-  document.getElementById("jouleCount").innerHTML = numberformat.format(clickData.joules) + "J Generated"
+  document.getElementById("jouleCount").innerHTML = numberformat.format(clickData.joules, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + "J Generated"
   document.getElementById("JGenT1Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT1Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT1, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 1 Energy Generators"
   document.getElementById("JGenT2Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT2Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT2, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 2 Energy Generators"
   document.getElementById("JGenT3Count").innerHTML = "Cost: " + numberformat.format(clickData.JGenT3Cost, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + ", You Have " + numberformat.format(clickData.JGenT3, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + " Tier 3 Energy Generators"
