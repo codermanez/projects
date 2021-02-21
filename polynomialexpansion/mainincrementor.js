@@ -1,4 +1,4 @@
-var cheatVar = false;
+bool cheatVar = false;
 var clickData = {
   joules: new Decimal("0"),
   jpc: new Decimal("1"),
