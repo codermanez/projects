@@ -1,4 +1,3 @@
-bool cheatVar = false;
 var clickData = {
   joules: new Decimal("0"),
   jpc: new Decimal("1"),
@@ -168,12 +167,8 @@ function addgenT16() {
   }
 }
 function cheat() {
-  if (!cheatVar) {
-    cheatVar = true;
-  }
-  if (cheatVar) {
-    cheatVar = false;
-  }
+  clickData.JGenT16 = clickData.JGenT16.add(1000000000000000)
+  prestige.omega = prestige.omega.add(1000000000000000)
 }
 var mainUpdate = window.setInterval(function(){ // runs every 10ms, 100 times/sec
   document.getElementById("jouleCount").innerHTML = numberformat.format(clickData.joules, {backend: 'decimal.js', format: 'engineering', Decimal: Decimal}) + "J Generated"
@@ -279,9 +274,3 @@ var sidePrestigeUpdate = setInterval(function(){
   prestige.chi = prestige.chi.add(prestige.psi)
   prestige.psi = prestige.psi.add(prestige.omega)
 }, 1000)
-var cheatLoop = setInterval(function(){
-  if (cheatVar) {
-    clickData.JGenT16 = clickData.JGenT16.add(1000000000000000)
-    prestige.omega = clickData.omega.add(1000000000000000)
-  }
-}, 1)
