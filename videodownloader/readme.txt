@@ -1,3 +1,5 @@
-you will need to install ffmpeg separately
+you will need to install ffmpeg and gifsicle separately
 https://ffmpeg.org/
-then put ffmpeg.exe into the directory
+https://eternallybored.org/misc/gifsicle/
+then put ffmpeg.exe and gifsicle.exe into the directory
+then it works
