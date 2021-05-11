@@ -8,7 +8,7 @@ import os
 from pygifsicle import optimize
 from pytube import YouTube
 from moviepy.editor import *
-jsonSuffix = '.json'
+jsonSuffix = ".json"
 vid240 = 'DASH_240.mp4'
 vid360 = 'DASH_360.mp4'
 vid480 = 'DASH_480.mp4'
