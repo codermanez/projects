@@ -4,9 +4,9 @@ const fetch = require('node-fetch')
 var uwuedtxt;
 const uwuifier = new Uwuifier({
 	spaces: {
-        faces: 0.03,
-        actions: 0.015,
-        stutters: 0.1
+        faces: 0.030,
+        actions: 0.0150,
+        stutters: 0.10
     },
     words: 1,
     exclamations: 1
